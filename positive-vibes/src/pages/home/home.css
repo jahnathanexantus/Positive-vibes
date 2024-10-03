@@ -1,4 +1,5 @@
 .home {
+  display: grid; /* Ensure this is set for grid layout */
   grid-template-columns: 4.32fr 7.68fr;
   align-items: center;
   padding: 40px;
@@ -17,6 +18,8 @@
   max-width: 600px;
   margin-inline: auto;
   padding-top: 20px;
+  position: relative; /* Ensure this is set for proper stacking context */
+  z-index: 2; /* Ensure text is above any potential background */
 }
 
 .home__title {
@@ -45,12 +48,30 @@
   margin-block: 16px 32px;
 }
 
-.color__block {
-  position: fixed;
-  height: 200%;
-  width: 100%;
-  background-color: var(--first-color);
-  top: -50%;
-  left: -83%;
-  transform: rotate(-15deg);
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .home {
+    grid-template-columns: 1fr; /* Stack items on top of each other */
+    padding: 20px; /* Reduce padding for smaller screens */
+    height: auto; /* Adjust height for content */
+  }
+
+  .home__img {
+    border-radius: 15px; /* Adjust border radius for smaller screens */
+    box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.2); /* Reduce shadow for mobile */
+  }
+
+  .home__data {
+    padding-top: 20px; /* Adjust padding for mobile */
+    text-align: center; /* Center text on mobile */
+  }
+
+  .home__title {
+    padding-left: 0; /* Remove padding for title on mobile */
+  }
+
+  .home__description {
+    margin-block: 16px 24px; /* Adjust margin for mobile */
+    text-align: center; /* Center description text on mobile */
+  }
 }
