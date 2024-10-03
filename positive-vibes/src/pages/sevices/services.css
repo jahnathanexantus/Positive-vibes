@@ -1,0 +1,49 @@
+.service-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #444;
+  text-transform: uppercase;
+  transition: color 0.3s, transform 0.3s;
+}
+
+h2:hover {
+  color: #e91e63; /* Hover color */
+  transform: scale(1.05); /* Enlarges text slightly */
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 0; /* Remove default left padding */
+  display: inline-block; /* Center the list */
+  text-align: left; /* Align text inside the list */
+  font-size: 18px;
+}
+
+li {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: bold;
+  color: #000;
+}
+
+.service-section {
+  margin-bottom: 20px;
+}
