@@ -35,7 +35,7 @@ const Home = () => {
 
         {/* Icons for Phone and Email */}
         <div className='contact-icons'>
-          <a href='tel:+4079137687' className='contact-icon'>
+          <a href='tel:+14079137687' className='contact-icon'>
             <FaPhoneAlt />
           </a>
           <a href='mailto:positivevibesfotp@gmail.com' className='contact-icon'>
