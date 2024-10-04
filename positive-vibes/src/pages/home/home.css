@@ -1,5 +1,36 @@
+/* General Styles */
+.nav__menu {
+  background-color: var(--first-color);
+  position: fixed;
+  inset-block: 0;
+  left: -100%; /* Initially hidden off-screen */
+  background-color: var(--container-color);
+  width: 100%;
+  padding: 60px 30px;
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  z-index: -1; /* Default z-index when hidden */
+}
+
+.show-menu {
+  left: 0;
+  z-index: 9999; /* Visible and on top when menu is active */
+}
+
+.nav__toggle {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--container-color);
+  padding: 12px 10px;
+  z-index: 10000; /* Ensure the toggle button is on top */
+}
+
+/* Home Page Section */
 .home {
-  display: grid; /* Ensure this is set for grid layout */
+  display: grid;
   grid-template-columns: 4.32fr 7.68fr;
   align-items: center;
   padding: 40px;
@@ -7,7 +38,8 @@
 }
 
 .home__img {
-  height: 100%;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 30px;
   box-shadow: 0 0 8px hsla(0, 0%, 0%, 0.3);
@@ -18,8 +50,8 @@
   max-width: 600px;
   margin-inline: auto;
   padding-top: 20px;
-  position: relative; /* Ensure this is set for proper stacking context */
-  z-index: 2; /* Ensure text is above any potential background */
+  position: relative;
+  z-index: 2; /* Text appears above */
 }
 
 .home__title {
@@ -35,22 +67,22 @@
 
 .contact-icons {
   display: flex;
-  justify-content: center; /* Center the icons horizontally */
-  align-items: center; /* Align items vertically center if needed */
-  gap: 40px; /* Increased space between the icons */
-  margin-top: 20px; /* Space above the icons */
-  padding: 0 10px; /* Optional: Add horizontal padding to prevent icons from touching the edges */
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 0 10px;
   margin-right: 387px;
 }
 
 .contact-icon {
-  font-size: 30px; /* Adjust icon size */
-  color: var(--first-color); /* Use your theme color */
-  transition: color 0.3s; /* Smooth color change on hover */
+  font-size: 30px;
+  color: var(--first-color);
+  transition: color 0.3s;
 }
 
 .contact-icon:hover {
-  color: var(--hover-color); /* Change color on hover */
+  color: var(--hover-color);
 }
 
 .home__description {
@@ -61,29 +93,47 @@
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .home {
-    grid-template-columns: 1fr; /* Stack items on top of each other */
-    padding: 20px; /* Reduce padding for smaller screens */
-    height: auto; /* Adjust height for content */
+    grid-template-columns: 1fr;
+    padding: 20px;
+    height: auto;
   }
 
   .home__img {
-    border-radius: 15px; /* Adjust border radius for smaller screens */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio on mobile */
+    border-radius: 15px;
     box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.2); /* Reduce shadow for mobile */
   }
 
   .home__data {
-    padding-top: 20px; /* Adjust padding for mobile */
-    text-align: center; /* Center text on mobile */
+    padding-top: 20px;
+    text-align: center;
   }
 
   .home__title {
-    padding-left: 0; /* Remove padding for title on mobile */
+    padding-left: 0;
   }
-  .contact-icons {
-    margin-right: 0; /* Remove margin to ensure icons stay centered */
-  }
+
   .home__description {
-    margin-block: 16px 24px; /* Adjust margin for mobile */
-    text-align: center; /* Center description text on mobile */
+    margin-block: 16px 24px;
+    text-align: center;
+  }
+
+  /* Hamburger Menu for Mobile */
+  .nav__menu {
+    z-index: -1; /* Hide behind elements initially */
+  }
+
+  .show-menu {
+    z-index: 9999; /* Show over everything when active */
+  }
+
+  .nav__toggle {
+    z-index: 10000; /* Keep the toggle button on top */
+  }
+
+  .contact-icons {
+    margin-right: 0; /* Center the icons on mobile */
+    gap: 20px; /* Reduce gap between icons */
   }
 }
