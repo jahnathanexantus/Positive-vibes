@@ -33,14 +33,24 @@
   color: var(--first-color);
 }
 
-.home__title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 22%;
-  width: 40px;
-  height: 5px;
-  background-color: var(--first-color);
+.contact-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  align-items: center; /* Align items vertically center if needed */
+  gap: 40px; /* Increased space between the icons */
+  margin-top: 20px; /* Space above the icons */
+  padding: 0 10px; /* Optional: Add horizontal padding to prevent icons from touching the edges */
+  margin-right: 387px;
+}
+
+.contact-icon {
+  font-size: 30px; /* Adjust icon size */
+  color: var(--first-color); /* Use your theme color */
+  transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.contact-icon:hover {
+  color: var(--hover-color); /* Change color on hover */
 }
 
 .home__description {
@@ -69,7 +79,9 @@
   .home__title {
     padding-left: 0; /* Remove padding for title on mobile */
   }
-
+  .contact-icons {
+    margin-right: 0; /* Remove margin to ensure icons stay centered */
+  }
   .home__description {
     margin-block: 16px 24px; /* Adjust margin for mobile */
     text-align: center; /* Center description text on mobile */
